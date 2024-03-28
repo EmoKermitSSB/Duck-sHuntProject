@@ -12,7 +12,6 @@ public class EnnemyMovement2 : MonoBehaviour
     void Start()
     {
         speed += 0.2f;
-        Debug.Log(speed);
     }
 
     // Update is called once per frame

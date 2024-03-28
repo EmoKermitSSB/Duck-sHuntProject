@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Gun : MonoBehaviour
 {
+    [SerializeField] public AudioManager audioManager;
+
     public Transform bulletSpawnPoint;
 
     public GameObject bulletPrefab;
@@ -18,6 +21,11 @@ public class Gun : MonoBehaviour
     private Animator GunAnim;
 
 
+    private void Awake()
+    {
+
+    }
+
     private void Start()
     {
         GunAnim = GetComponent<Animator>();
@@ -28,6 +36,7 @@ public class Gun : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            audioManager.PlaySFX(audioManager.shoot);
             GunAnim.SetBool("Shoot", true);
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;

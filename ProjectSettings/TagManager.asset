@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Wall
   - Blocking
+  - GameMusic
   layers:
   - Default
   - TransparentFX

@@ -60,6 +60,5 @@ public class Spawner : MonoBehaviour
     public void Desincrementation()
     {
         Reloader -= 1;
-        Debug.Log(Reloader);
     }
 }
